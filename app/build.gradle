@@ -50,6 +50,7 @@ android {
                 variant.outputs.all{ output ->
                     def name="pocAndroid.apk"
                     output.outputFileName = name
+                    artifact(output.outputFileName)
                     }
                 }
         }
@@ -58,7 +59,7 @@ android {
 }
 
 artifacts {
-        archives file('/app/buld/outputs/apk/debug/')
+        archives file('/app/build/outputs/apk/debug/pocAndroid.apk')
     }
 
 dependencies {
