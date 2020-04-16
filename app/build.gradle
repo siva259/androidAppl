@@ -57,6 +57,9 @@ android {
 
 }
 
+artifacts {
+        archives file('/app/buld/outputs/apk/debug/')
+    }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
