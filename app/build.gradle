@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'maven'
-
 
 android {
     compileSdkVersion 29
@@ -57,9 +55,6 @@ android {
 
 }
 
-artifacts {
-        archives file('*.apk')
-    }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -71,15 +66,3 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }
 
-uploadArchives {
-    repositories {
-       mavenDeployer {
-             repository(url: "http://35.226.54.253:8081/repository/maven-releases/") {
-             authentication(userName: "admin", password: "Test@123")
-}
-             pom.version = "1.0"
-             pom.artifactId = "pocAndroid"
-             pom.groupId = "com.example.android"
-       }
-    }
-}
