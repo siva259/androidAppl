@@ -50,7 +50,6 @@ android {
                 variant.outputs.all{ output ->
                     def name="pocAndroid.apk"
                     output.outputFileName = name
-                    artifact(output.outputFileName)
                     }
                 }
         }
