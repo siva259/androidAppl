@@ -37,7 +37,6 @@ task clean(type: Delete) {
 
 version = '1.0'
 group = 'com.examples.android'
-sourceCompatibility = ‘1.8’
 apply plugin: ‘maven-publish’
 publishing {
           publications {
