@@ -2,13 +2,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'maven'
 
 
-repositories {
-    maven {
-          url "http://35.226.54.253:8081/repository/maven-releases/"
-    }
-}
-
-
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
