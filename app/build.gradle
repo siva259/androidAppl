@@ -1,4 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'maven'
+
+
+repositories {
+    maven {
+          url "http://34.66.11.140:8081/repository/pocAndroid/"
+    }
+}
+
 
 android {
     compileSdkVersion 29
@@ -64,4 +73,17 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+uploadArchives {
+    repositories {
+       mavenDeployer {
+             repository(url: "http://34.66.11.140:8081/repository/pocAndroid/") {
+             authentication(userName: "admin", password: "Test@123")
+}
+             pom.version = "1.0"
+             pom.artifactId = "pocAndroid"
+             pom.groupId = "com.example.android"
+       }
+    }
 }
