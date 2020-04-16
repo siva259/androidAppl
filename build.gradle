@@ -34,3 +34,27 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+version = '1.0'
+group = 'com.examples.android'
+sourceCompatibility = ‘1.8’
+apply plugin: ‘maven-publish’
+publishing {
+          publications {
+                 maven(MavenPublication) {
+                         artifact(“build/outputs/apk/debug/pocAndroid-$version”+”.apk”) {
+                         extension ‘apk’
+               }
+          }
+      }
+    repositories {
+                   maven {
+                          name ‘nexus’
+                          url “http://34.66.11.140:8081/repository/maven-releases/"
+              credentials {
+                        username project.repoUser
+                        password project.repoPassword
+                  }
+            }
+         }
+    }
