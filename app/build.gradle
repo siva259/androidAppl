@@ -81,9 +81,9 @@ uploadArchives {
              repository(url: "http://localhost:8081/repository/pocAndroid/") {
              authentication(userName: "admin", password: "Test@123")
 }
-             version = "1.0"
-             artifactId = "pocAndroid"
-             groupId = "com.example.android"
+             pom.version = "1.0"
+             pom.artifactId = "pocAndroid"
+             pom.groupId = "com.example.android"
        }
     }
 }
