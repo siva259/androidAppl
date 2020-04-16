@@ -41,7 +41,7 @@ apply plugin: 'maven-publish'
 publishing {
           publications {
                  maven(MavenPublication) {
-                         artifact("build/outputs/apk/debug/pocAndroid-$version”+”.apk") {
+                         artifact("build/outputs/apk/debug/pocAndroid-$version"+".apk") {
                          extension 'apk'
                }
           }
