@@ -58,7 +58,7 @@ android {
 }
 
 artifacts {
-        archives file('${workspace}/app/build/outputs/apk/debug/pocAndroid.apk')
+        archives file('**/*.apk')
     }
 
 dependencies {
