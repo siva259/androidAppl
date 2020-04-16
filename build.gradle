@@ -20,18 +20,7 @@ buildscript {
     }
 }
 
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "http://35.226.54.253:8081/repository/maven-releases/") {
-                authentication(userName: "admin", password: "Test@123")
-                pom.groupId = "com.examples.android"
-                pom.artifactId = "pocAndroid"
-                pom.version = '1.0'
-            }
-        }
-    }
-}
+
 
 allprojects {
     repositories {
@@ -43,4 +32,16 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://35.226.54.253:8081/repository/maven-releases/") {
+                authentication(userName: "admin", password: "Test@123")
+                pom.groupId = "com.examples.android"
+                pom.artifactId = "pocAndroid"
+                pom.version = '1.0'
+            }
+        }
+    }
 }
