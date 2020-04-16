@@ -4,7 +4,7 @@ apply plugin: 'maven'
 
 repositories {
     maven {
-          url "http://localhost:8081/repository/pocAndroid/"
+          url "http://35.226.54.253:8081/repository/maven-releases/"
     }
 }
 
@@ -78,7 +78,7 @@ dependencies {
 uploadArchives {
     repositories {
        mavenDeployer {
-             repository(url: "http://localhost:8081/repository/pocAndroid/") {
+             repository(url: "http://35.226.54.253:8081/repository/maven-releases/") {
              authentication(userName: "admin", password: "Test@123")
 }
              pom.version = "1.0"
