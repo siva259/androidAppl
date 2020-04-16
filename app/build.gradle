@@ -58,7 +58,7 @@ android {
 }
 
 artifacts {
-        archives file('**/*.apk')
+        archives file('*.apk')
     }
 
 dependencies {
