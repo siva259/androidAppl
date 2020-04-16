@@ -34,20 +34,3 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-
-
-apply plugin: 'maven'
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "http://34.66.11.140:8081/repository/maven-releases/") {
-                authentication(userName: "admin", password: "Test@123")
-                pom.groupId = "com.examples.android"
-                pom.artifactId = "pocAndroid"
-                pom.version = '1.0'
-            }
-        }
-    }
-}
-
