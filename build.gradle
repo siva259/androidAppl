@@ -5,7 +5,7 @@ buildscript {
         google()
         jcenter()
         maven {
-          url "http://34.66.11.140:8081/repository/maven-releases/"
+          url "http://35.224.114.94:8081/repository/maven-releases/"
     }
         
     }
@@ -25,7 +25,7 @@ allprojects {
         google()
         jcenter()
         maven {
-          url "http://34.66.11.140:8081/repository/maven-releases/"
+          url "http://35.224.114.94:8081/repository/maven-releases/"
     }
         
     }
@@ -35,25 +35,28 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-version = '1.0'
-group = 'com.examples.android'
-apply plugin: 'maven-publish'
-publishing {
-          publications {
-                 maven(MavenPublication) {
-                         artifact("pocAndroid-$version"+".apk") {
-                         extension 'apk'
-               }
-          }
-      }
-    repositories {
-                   maven {
-                          name 'nexus'
-                          url "http://34.66.11.140:8081/repository/maven-releases/"
-              credentials {
-                        username project.repoUser
-                        password project.repoPassword
-                  }
+apply plugin: 'maven'
+
+uploadArchives {
+repositories {
+        mavenDeployer {
+            repository(url: "http://35.224.114.94:8081/repository/maven-releases/") {
+                authentication(userName: "admin", password: "Test@123")
             }
-         }
+
+            pom.project {
+                version "1.0"
+                artifactId "pocAndroid"
+                name "pocAndroid"
+                groupId "com.examples.android"
+            }
+        }
     }
+}
+
+  
+def apk = file('app/build/outputs/apk/debug/pocAndroid.apk')
+
+artifacts {
+    archives apk
+}
