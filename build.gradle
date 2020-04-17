@@ -1,6 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-apply plugin: 'maven'
+//apply plugin: 'maven'
 
 buildscript {
     
@@ -21,7 +21,7 @@ buildscript {
     }
 }
 
-uploadArchives {
+/*uploadArchives {
 repositories {
         mavenDeployer {
             repository(url: "http://35.224.114.94:8081/repository/pocAndroid/") {
@@ -42,7 +42,7 @@ def apk = file('app/build/outputs/apk/debug/pocAndroid.apk')
 
 artifacts {
     archives apk
-}
+}*/
 
 allprojects {
     repositories {
