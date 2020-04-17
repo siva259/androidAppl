@@ -8,7 +8,7 @@ buildscript {
         google()
         jcenter()
         maven {
-          url "http://35.224.114.94:8081/repository/maven-releases/"
+          url "http://35.224.114.94:8081/repository/pocAndroid/"
     }
         
     }
@@ -24,17 +24,17 @@ buildscript {
 uploadArchives {
 repositories {
         mavenDeployer {
-            repository(url: "http://35.224.114.94:8081/repository/maven-releases/") {
+            repository(url: "http://35.224.114.94:8081/repository/pocAndroid/") {
                 authentication(userName: "admin", password: "Test@123")
             }
 
-            pom.project {
                 version "1.0"
                 artifactId "pocAndroid"
                 name "pocAndroid"
                 groupId "com.examples.android"
+                extension "apk"
             }
-        }
+            
     }
 }
 
