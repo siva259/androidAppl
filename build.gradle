@@ -1,16 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
-//apply plugin: 'maven'
-
 buildscript {
     
     repositories {
         google()
         jcenter()
-        maven {
-          url "http://35.224.114.94:8081/repository/pocAndroid/"
-    }
-        
+                
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.2'
@@ -21,37 +16,12 @@ buildscript {
     }
 }
 
-/*uploadArchives {
-repositories {
-        mavenDeployer {
-            repository(url: "http://35.224.114.94:8081/repository/pocAndroid/") {
-                authentication(userName: "admin", password: "Test@123")
-            }
-
-                pom.version= "1.0"
-                pom.artifactId= "pocAndroid"
-                pom.groupId= "com.examples.android"
-                pom.packaging= "apk"
-            }
-            
-    }
-}
-
-  
-def apk = file('app/build/outputs/apk/debug/pocAndroid.apk')
-
-artifacts {
-    archives apk
-}*/
 
 allprojects {
     repositories {
         google()
         jcenter()
-        maven {
-          url "http://35.224.114.94:8081/repository/maven-releases/"
-    }
-        
+                
     }
 }
 
