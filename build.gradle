@@ -28,11 +28,10 @@ repositories {
                 authentication(userName: "admin", password: "Test@123")
             }
 
-                version "1.0"
-                artifactId "pocAndroid"
-                name "pocAndroid"
-                groupId "com.examples.android"
-                extension "apk"
+                pom.version= "1.0"
+                pom.artifactId= "pocAndroid"
+                pom.groupId= "com.examples.android"
+                pom.packaging= "apk"
             }
             
     }
